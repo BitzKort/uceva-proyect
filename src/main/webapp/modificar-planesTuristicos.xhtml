@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Modificar PlanesTuristicos</title>
+</h:head>
+
+<h:body>
+    <ui:composition template="./WEB-INF/plantillas/modificarcrear.xhtml">
+        <ui:define name="content">
+            <h:form id="formdatos">
+                <p:messages id="mensajes" showDetails="false" autoUpdate="true" />
+
+                <h2>Modificar PlanesTuristicos</h2>
+
+                <div class="mb-3">
+                    <label for="id_plan_turistico" class="form-label">ID Plan Turistico</label>
+                    <h:inputText class="form-control" id="id_plan_turistico" value="#{planTuristicoBean.planTuristico.id_plan_turistico}"/>
+                </div>
+                <div class="mb-3">
+                    <label for="titulo" class="form-label">Titulo</label>
+                    <h:inputText class="form-control" id="titulo" value="#{planTuristicoBean.planTuristico.titulo}"/>
+                </div>
+                <div class="mb-3">
+                    <label for="descripcion" class="form-label">Descripcion</label>
+                    <h:inputText class="form-control" id="descripcion" value="#{planTuristicoBean.planTuristico.descripcion}"/>
+                </div>
+                <div class="mb-3">
+                    <label for="fech_creacion" class="form-label">Fecha de Creacion</label>
+                    <h:inputText class="form-control" id="fech_creacion" value="#{planTuristicoBean.planTuristico.fech_creacion}"/>
+                </div>
+                <div class="mb-3">
+                    <label for="fech_modificacion" class="form-label">Fecha de Modificacion</label>
+                    <h:inputText class="form-control" id="fech_modificacion" value="#{planTuristicoBean.planTuristico.fech_modificacion}"/>
+                </div>
+                <div class="mb-3">
+                    <label for="cant_dias" class="form-label">Cantidad de Dias</label>
+                    <h:inputText class="form-control" id="cant_dias" value="#{planTuristicoBean.planTuristico.cant_dias}"/>
+                </div>
+                <div class="mb-3">
+                    <label for="estado" class="form-label">Estado</label>
+                    <h:inputText class="form-control" id="estado" value="#{planTuristicoBean.planTuristico.estado}"/>
+                </div>
+                <div class="mb-3">
+                    <label for="alimentacion" class="form-label">Alimentacion</label>
+                    <h:inputText class="form-control" id="alimentacion" value="#{planTuristicoBean.planTuristico.alimentacion}"/>
+                </div>
+
+                <div class="mb-3">
+                    <h:commandButton value="Guardar" action="#{planTuristicoBean.editar()}"/>
+                    <h:commandButton value="Retroceder" action="#{planTuristicoBean.devolverEditar()}"/>
+                    <h:commandButton value="Ir A los Puntos De Visita" action="#{planTuristicoBean.irActividad()}"/>
+                </div>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

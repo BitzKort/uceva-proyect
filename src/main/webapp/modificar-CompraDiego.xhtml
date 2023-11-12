@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Modificar Compras Diego</title>
+</h:head>
+
+<h:body>
+    <ui:composition template="./WEB-INF/plantillas/modificarcrear.xhtml">
+        <ui:define name="content">
+            <h:form id="formdatos">
+                <p:messages id="mensajes" showDetails="false" autoUpdate="true" />
+
+                <h2>Modificar Compras Diego</h2>
+
+                <div class="mb-3">
+                    <label for="id_compra" class="form-label">ID</label>
+                    <h:inputText class="form-control" id="id_compra" value="#{compraDiegoBean.compraDiego.id_compra}" />
+                </div>
+                <div class="mb-3">
+                    <label for="id_cliente" class="form-label">ID CLIENTE </label>
+                    <h:inputText class="form-control" id="id_cliente" value="#{compraDiegoBean.compraDiego.id_cliente}" />
+                </div>
+                <div class="mb-3">
+                    <label for="id_vendedor" class="form-label">ID VENDEDOR</label>
+                    <h:inputText class="form-control" id="id_vendedor" value="#{compraDiegoBean.compraDiego.id_vendedor}" />
+                </div>
+                <div class="mb-3">
+                    <label for="fech_creacion" class="form-label">FECHA CREACION</label>
+                    <h:inputText class="form-control" id="fech_creacion" value="#{compraDiegoBean.compraDiego.fech_creacion}" />
+                </div>
+                <div class="mb-3">
+                    <label for="total_planes" class="form-label">TOTAL PLANES</label>
+                    <h:inputText class="form-control" id="total_planes" value="#{compraDiegoBean.compraDiego.total_planes}" />
+                </div>
+                <div class="mb-3">
+                    <label for="total_otros_cargos" class="form-label">TOTAL OTROS CARGOS</label>
+                    <h:inputText class="form-control" id="total_otros_cargos" value="#{compraDiegoBean.compraDiego.total_otros_cargos}" />
+                </div>
+                <div class="mb-3">
+                    <label for="total" class="form-label">TOTAL</label>
+                        <h:inputText class="form-control" id="total" value="#{compraDiegoBean.compraDiego.total}" />
+                </div>
+
+                <div class="mb-3">
+                    <h:commandButton value="Guardar" action="#{compraDiegoBean.editar()}" />
+                    <h:commandButton value="Retroceder" action="#{compraDiegoBean.devolverEditar()}" />
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+    <a href="../../../../../../../../Downloads/Arbol.java"></a>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <link rel="stylesheet" href="resources/css/style.css">
+</head>
+<body>
+  
+
+   <!--EN ESTA PARTE SE DECLARA LO QUE SERIA LAS CLASES O ID PARA PODER LLAMARLAS DESDE BOTONES--> 
+    <header>
+        <a href="#" class="logo">PLAN TURISTICO</a>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#inicio" class="active">Inicio</a></li>  <!--hace que aparezcan en la barra -->
+                <li><a href="#Descuento" > Planes Turisticos</a></li>
+                <li><a href="#frase" > Quienes somos</a></li>
+                <li><a href="#PlanTuris" > Actividades</a></li>
+                <li><a href="#CrudsPlan" > Cruds Para Plan Turistico</a></li>
+                <li><a href="#Integrantes" > Nuestro Personal</a></li>
+                <li><a href="#Inscribirse" >Inscribete</a></li>
+            </ul>
+            
+        </nav>
+        <div class="fas fa-bars"></div>  <!--EL ICONO PA CUANDO LA PANTALLA SE ENCHIQUITA COMO CELULAR-->
+    </header>
+
+    <main>
+<!--INICIO DEL PLAN TURISTICO-->
+<section class="inicio" id="inicio">
+    <div class="content">
+
+        <a href="#Descuento"><button>Planes Turisticos</button></a>
+        <a href="#CrudsPlan"><button>CRUDS</button></a>
+    </div>
+</section>
+
+
+<!--DESCUENTOS-->
+
+<!--El box container hace los cuadros-->
+<section class="Descuento" id="Descuento">
+    <h1 class="heading">NUESTROS RECOMENDADOS DEL MES</h1>
+    <div class="box-container">
+
+        <div class="box" onclick="funciones1(1)" id="funciones1">
+            <h3>Cancún Paradise Todo incluido</h3>
+            <p>8 Días / 7 NOCHES</p>
+            <p>Vuelo directo BOG / CUN</p>
+            <p>Ahorras $1.234.567</p>
+            <p>Precio final por persona</p>
+            <p>$6.789.012 con descuento: $5.554.445</p>
+        </div>
+
+        <div class="box" onclick="funciones1(2)" id="funciones2">
+            <h3>Riviera Maya Retreat Todo incluido</h3>
+            <p>9 Días / 8 NOCHES</p>
+            <p>Vuelo directo BOG / CUN</p>
+            <p>Ahorras $987.654</p>
+            <p>Precio final por persona</p>
+            <p>$7.890.123 con descuento: $6.902.469</p>
+        </div>
+
+        <div class="box" onclick="funciones1(3)" id="funciones3">
+            <h3>Playa del Carmen Bliss Todo incluido</h3>
+            <p>5 Días / 4 NOCHES</p>
+            <p>Vuelo directo BOG / CUN</p>
+            <p>Ahorras $543.210</p>
+            <p>Precio final por persona</p>
+            <p>$4.321.098 con descuento: $3.777.888</p>
+        </div>
+
+        <div class="box" onclick="funciones1(4)" id="funciones4">
+            <h3>Tulum Serenity Todo incluido Resort</h3>
+            <p>10 Días / 9 NOCHES</p>
+            <p>Vuelo con escalas BOG / CUN</p>
+            <p>Ahorras $1.876.543</p>
+            <p>Precio final por persona</p>
+            <p>$8.765.432 con descuento: $6.888.889</p>
+        </div>
+
+        <div class="box" onclick="funciones1(5)" id="funciones5">
+            <h3>Cozumel Coastal Resort</h3>
+            <p>6 Días / 5 NOCHES</p>
+            <p>Vuelo con escalas BOG / CUN</p>
+            <p>Ahorras $1.234.567</p>
+            <p>Precio final por persona</p>
+            <p>$5.678.901 con descuento: $4.444.445</p>
+        </div>
+
+        <div class="box" onclick="funciones1(6)" id="funciones6">
+            <h3>Isla Holbox Paradise Todo incluido</h3>
+            <p>7 Días / 6 NOCHES</p>
+            <p>Vuelo directo BOG / CUN</p>
+            <p>Ahorras $987.654 </p>
+            <p>Precio final por persona</p>
+            <p>$6.543.210 con descuento: $5.555.555</p>
+        </div>
+
+        <div class="box" onclick="funciones1(7)" id="funciones7">
+            <h3>Cozumel Coastal Resort</h3>
+            <p>9 Días / 8 NOCHES</p>
+            <p>Vuelo con escalas BOG / CUN</p>
+            <p>Ahorras $1.765.432 </p>
+            <p>Precio final por persona</p>
+            <p>$7.890.123 con descuento: $6.123.456</p>
+        </div>
+
+        <div class="box" onclick="funciones1(8)" id="funciones8">
+            <h3>Playa del Carmen Bliss Resort</h3>
+            <p>6 Días / 5 NOCHES</p>
+            <p>Vuelo directo BOG / CUN</p>
+            <p>Ahorras $654.321 </p>
+            <p>Precio final por persona</p>
+            <p>$5.432.109 con descuento: $4.777.888</p>
+        </div>
+
+        <a href="#Inscribirse"><button>Inscribete</button></a>
+
+    </div>
+</section>
+
+
+
+<section class="frase" id="frase">
+
+    <h1 class="letra">Disfruta con Nosotros</h1>
+    <h1 class="letra1">Nos asociamos con los destinos turísticos mas emblematicos de Colombia, ofreciendo acuerdos exclusivos para que vivas unas vacaciones memorables. Nuestro objetivo es que disfrutes de tus viajes sin preocupaciones, por eso nos aseguramos de que todos los atractivos estén listos para recibir a los turistas, cumpliendo con todos los protocolos de bioseguridad necesarios.</h1>
+    
+    <div class="row">
+        <div class="image">
+            <img src="resources/img/MUNDO.png" alt="">
+        </div>
+        <div class="content">
+            <h3>Aprovecha Nuestros Planes</h3>
+            <a href="#PlanTuris"><button>Planes Turisticos</button></a> <!--PARA MANDAR DESDE EL BOTON A ALGUNA PAGINA-->
+        </div>
+    </div>
+
+</section>
+
+
+<!--ESTA PARTE ES LA SECCION DE LOS PLANES TURISTICOS-->
+<section class="PlanTuris" id="PlanTuris">
+
+    <h1 class="heading">ACTIVIDADES</h1>
+
+    <div class="box-container">
+        <div class="box">
+            <i class="fas fa-hiking"></i>
+            <h3>Senderismo en la Selva</h3>
+            <p>De 10 a.m. a 1 p.m.</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-mountain"></i>
+            <h3>Escalada en Roca</h3>
+            <p>De 9 a.m. a 12 p.m.</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-bicycle"></i>
+            <h3>Paseo en Bicicleta de Montana</h3>
+            <p>De 2 p.m. a 5 p.m.</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-ship"></i>
+            <h3>Excursion en Barco</h3>
+            <p>De 9 a.m. a 1 p.m.</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-swimmer"></i>
+            <h3>Snorkeling en Arrecifes</h3>
+            <p>De 11 a.m. a 2 p.m.</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-camera"></i>
+            <h3>Fotografia de Fauna y Flora</h3>
+            <p>De 3 p.m. a 6 p.m.</p>
+        </div>
+    </div>
+
+</section>
+
+        <!-- ESTA ES LA PARTE DEL CRUD-->
+        <section class="CRUDS" id="CrudsPlan" >
+            <h1 class="heading">CRUDS</h1>
+            <div class="box-container" >
+                <a href="listar-actividades.xhtml">
+                    <div class="box">
+                        <i class="fas fa-list-alt"></i>
+                        <h3>CRUD-ACTIVIDADES</h3>
+                        <p></p>
+                    </div>
+                </a>
+                <a href="listar-activos.xhtml">
+                    <div class="box" onclick="">
+                        <i class="fas fa-database"></i>
+                        <h3>CRUD-ACTIVO</h3>
+                        <p></p>
+                    </div>
+                </a>
+                <a href="listar-clientes.xhtml">
+                    <div class="box" onclick="">
+                        <i class="fas fa-users"></i>
+                        <h3>CRUD-CLIENTE</h3>
+                        <p></p>
+                    </div>
+                </a>
+                <a href="listar-planesTuristicos.xhtml">
+                    <div class="box" onclick="">
+                        <i class="fas fa-globe"></i>
+                        <h3>CRUD-PLANTURISTICO</h3>
+                        <p></p>
+                    </div>
+                </a>
+                <a href="listar-puntosVisitas.xhtml">
+                    <div class="box" onclick="">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>CRUD-PUNTO DE VISITA</h3>
+                        <p></p>
+                    </div>
+                </a>
+                <a href="listar-vendedores.xhtml">
+                    <div class="box" onclick="">
+                        <i class="fas fa-user-secret"></i>
+                        <h3>CRUD-VENDEDOR</h3>
+                        <p></p>
+                    </div>
+                </a>
+
+                <a href="listar-CompraDiego.xhtml">
+                    <div class="box" onclick="">
+                        <i class="fas fa-user-secret"></i>
+                        <h3>CRUD-COMPRADIEGO</h3>
+                        <p></p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- ESTA ES LA PARTE DE INTEGRANTES-->
+
+        <section class="Integrantes" id="Integrantes">
+
+    <h3 class="heading">NUESTRO PERSONAL</h3>
+
+            <div class="box-container">
+                <div class="box">
+                    <img src="resources/img/jovenn.jpg" alt="">
+                    <h3>Juan Sebastian Lenis Acosta</h3>
+                    <p>Ingenieria de Sistemas</p>
+                    <div class="extra-info">
+                        <p>Experiencia: 5 </p>
+                        <p>Área de especialización: Desarrollo web</p>
+                    </div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="resources/img/joven.jpg" alt="">
+                    <h3>Cristian David Ibarra Sierra</h3>
+                    <p>Ingenieria de Sistemas</p>
+                    <div class="extra-info">
+                        <p>Experiencia: 3</p>
+                        <p>Area de especializacion: Inteligencia Artificial</p>
+                    </div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="resources/img/jovenn.jpg" alt="">
+                    <h3>Juan Felipe Martinez Bentacourt</h3>
+                    <p>Ingeniería de Sistemas</p>
+                    <div class="extra-info">
+                        <p>Experiencia: 4 </p>
+                        <p>Area de especializacion: Seguridad Informatica</p>
+                    </div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+
+<section class="Inscribirse" id="Inscribirse">
+
+    <h1 class="heading">Arma Tu Plan</h1>
+    <div class="row">
+        <div class="form-container">
+
+            <form action="">
+                <input type="text" placeholder="Nombre">
+                <input type="email" placeholder="Correo">
+                <input type="number" placeholder="Telefono">
+                <input type="text" placeholder="Ingresa desde dónde viajas">
+                <input type="text" placeholder="Ingresa hacia dónde viajas">
+                <input type="text" placeholder="Plan Turistico Que Deseas Escoger">
+                <textarea cols="15" rows="5" placeholder="Mensaje"></textarea >
+                <input type="submit" value="Enviar">        
+            </form>
+
+        </div>
+    </div>
+
+</section>
+
+<section class="footer">
+
+    <div class="icons">
+
+    </div>
+
+    </section>
+</main>
+    
+
+
+
+    <!--JQUERY O JAVA COMIENZA DESDE ACA-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        // TODO ESTE CODIGO ES PARA LA PARTE SUPERIOR ARRIBA A LA DERECHA PA SEÑALAR Y CAMBIAR ENTRE VENTANAS, COMO TAL LA BARRA
+        $(document).ready(function() {
+
+            $('.fa-bars').click(function() {
+
+                $(this).toggleClass('fa-times');
+                $('.navbar').toggleClass('nav-toggle');
+
+            });
+
+            $(window).on('scroll load', function() {
+
+                $('.fa-bars').removeClass('fa-times');
+                $('.navbar').removeClass('nav-toggle');
+
+                $('section').each(function() {
+
+                    //VARIABLES
+                    var id = $(this).attr('id');
+                    var height = $(this).height();
+                    var offset = $(this).offset().top -200;
+                    var top = $(window).scrollTop();
+
+                    if(top >= offset && top < offset + height) {
+                        $('.navbar ul li a').removeClass('active');
+                        $('.navbar').find('[href="#'+id+'"]').addClass('active');
+                    }
+
+                });
+
+            });
+
+        });
+
+    </script>
+    <script src="resources/funciones.js"> </script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Modificar Vendedores</title>
+</h:head>
+
+<h:body>
+    <ui:composition template="./WEB-INF/plantillas/modificarcrear.xhtml">
+        <ui:define name="content">
+            <h:form id="formdatos">
+                <p:messages id="mensajes" showDetails="false" autoUpdate="true" />
+
+                <h2>Modificar Vendedores</h2>
+
+                <div class="mb-3">
+                    <label for="cedula_vendedor" class="form-label">Cédula Vendedor</label>
+                    <h:inputText class="form-control" id="cedula_vendedor" value="#{vendedorBean.vendedor.cedula_vendedor}"/>
+                </div>
+
+                <div class="mb-3">
+                    <label for="nombre_vendedor" class="form-label">Nombre Vendedor</label>
+                    <h:inputText class="form-control" id="nombre_vendedor" value="#{vendedorBean.vendedor.nombre_vendedor}"/>
+                </div>
+
+                <div class="mb-3">
+                    <label for="correo_electronico" class="form-label">Correo Electrónico</label>
+                    <h:inputText class="form-control" id="correo_electronico" value="#{vendedorBean.vendedor.correo_electronico}"/>
+                </div>
+
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <h:inputText class="form-control" id="username" value="#{vendedorBean.vendedor.username}"/>
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <h:inputSecret class="form-control" id="password" value="#{vendedorBean.vendedor.password}"/>
+                </div>
+
+                <div class="mb-3">
+                    <label for="fech_nacimiento" class="form-label">Fecha de Nacimiento</label>
+                    <h:inputText class="form-control" id="fech_nacimiento" value="#{vendedorBean.vendedor.fech_nacimiento}"/>
+                </div>
+
+                <div class="mb-3">
+                    <label for="fech_modificacion" class="form-label">Fecha de Modificación</label>
+                    <h:inputText class="form-control" id="fech_modificacion" value="#{vendedorBean.vendedor.fech_modificacion}"/>
+                </div>
+
+                <div class="mb-3">
+                    <label for="fech_creacion" class="form-label">Fecha de Creación</label>
+                    <h:inputText class="form-control" id="fech_creacion" value="#{vendedorBean.vendedor.fech_creacion}"/>
+                </div>
+
+                <div class="mb-3">
+                    <h:commandButton value="Guardar" action="#{vendedorBean.editar()}"/>
+                    <h:commandButton value="Retroceder" action="#{vendedorBean.devolverEditar()}"/>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

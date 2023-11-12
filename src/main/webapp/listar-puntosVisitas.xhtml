@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Listado de puntosVisitas</title>
+</h:head>
+
+<h:body>
+    <h:form id="formdatos">
+        <p:messages id="mensajes" showDetails="false" autoUpdate="true" />
+        <p:dataTable id="tbldatos" value="#{puntoVisitaBean.listar()}" var="puntoVisita">
+            <p:column headerText="ID ACTIVIDAD">
+                <h:outputText value="#{puntoVisita.id_actividad}" />
+            </p:column>
+            <p:column headerText="NOMBRE DE LA ACTIVIDAD">
+                <h:outputText value="#{puntoVisita.nom_actividad}" />
+            </p:column>
+            <p:column headerText="DESCRIPCIÓN">
+                <h:outputText value="#{puntoVisita.descripcion}" />
+            </p:column>
+            <p:column headerText="ESTADO">
+                <h:outputText value="#{puntoVisita.estado}" />
+            </p:column>
+            <p:column headerText="FECHA DE MODIFICACIÓN">
+                <h:outputText value="#{puntoVisita.fech_modificacion}" />
+            </p:column>
+            <p:column headerText="FECHA DE CREACIÓN">
+                <h:outputText value="#{puntoVisita.fech_creacion}" />
+            </p:column>
+            <p:column headerText="ID DEPARTAMENTO">
+                <h:outputText value="#{puntoVisita.id_departamento}" />
+            </p:column>
+            <p:column headerText="ID CIUDAD">
+                <h:outputText value="#{puntoVisita.id_ciudad}" />
+            </p:column>
+
+            <p:column headerText="#{msgs['coreAction']}">
+                <p:commandButton styleClass="iu-button-danger"
+                                 value="Borrar"
+                                 action="#{puntoVisitaBean.eliminar(puntoVisita.id_actividad)}"
+                                 update="formdatos:tbldatos">
+                    <p:confirm header="Eliminar" message="Seguro que desea eliminar?" />
+                </p:commandButton>
+            </p:column>
+
+            <p:column headerText="#{msgs['coreAction']}">
+                <p:commandButton styleClass="iu-button-danger"
+                                 value="Editar"
+                                 action="#{puntoVisitaBean.irEditar(puntoVisita.id_actividad)}"
+                                 update="formdatos:tbldatos">
+                </p:commandButton>
+            </p:column>
+            <p:column headerText="#{msgs['coreAction']}">
+                <p:commandButton styleClass="iu-button-danger"
+                                 value="Ver Plan Turistico"
+                                 action="#{planTuristicoBean.irEditar(puntoVisita.id_actividad)}"
+                                 update="formdatos:tbldatos">
+                </p:commandButton>
+            </p:column>
+        </p:dataTable>
+
+        <p:confirmDialog global="true" showEffect="fade" hideEffect="fade" responsive="true" width="350">
+            <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no ui-button-flat" />
+            <p:commandButton value="Si" type="button" styleClass="ui-confirmdialog-yes" />
+        </p:confirmDialog>
+
+        <h:commandButton styleClass="btn-primary" action="#{puntoVisitaBean.irCrear()}" value="Crear PuntosVisitas" />
+
+        <!--BOTON PA DEVOLVERSE-->
+        <h:commandButton value="Retroceder" action="#{puntoVisitaBean.devolverse()}" />
+    </h:form>
+</h:body>
+</html>

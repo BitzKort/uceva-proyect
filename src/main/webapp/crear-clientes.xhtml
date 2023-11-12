@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Crear Cliente</title>
+</h:head>
+
+<h:body>
+    <ui:composition template="./WEB-INF/plantillas/modificarcrear.xhtml">
+        <ui:define name="content">
+            <h2>Crear Cliente</h2>
+            <p:messages id="mensajes" showDetails="false" autoUpdate="true" />
+            <h:form id="formdatos">
+                <div class="mb-3">
+                    <label for="cedula_cliente" class="form-label">Cédula Cliente</label>
+                    <h:inputText class="form-control" id="cedula_cliente" value="#{clienteBean.cliente.cedula_cliente}"/>
+                </div>
+                <div class="mb-3">
+                    <label for="nombre_cliente" class="form-label">Nombre Cliente</label>
+                    <h:inputText class="form-control" id="nombre_cliente" value="#{clienteBean.cliente.nombre_cliente}"/>
+                </div>
+                <div class="mb-3">
+                    <label for="correo_electronico" class="form-label">Correo Electrónico</label>
+                    <h:inputText class="form-control" id="correo_electronico" value="#{clienteBean.cliente.correo_electronico}"/>
+                </div>
+                <div class="mb-3">
+                    <label for="tel_pers_contact" class="form-label">Teléfono Personal de Contacto</label>
+                    <h:inputText class="form-control" id="tel_pers_contact" value="#{clienteBean.cliente.tel_pers_contact}"/>
+                </div>
+                <div class="mb-3">
+                    <label for="quien_creo" class="form-label">Quién Creó</label>
+                    <h:inputText class="form-control" id="quien_creo" value="#{clienteBean.cliente.quien_creo}"/>
+                </div>
+                <div class="mb-3">
+                    <label for="nom_pers_contact" class="form-label">Nombre Personal de Contacto</label>
+                    <h:inputText class="form-control" id="nom_pers_contact" value="#{clienteBean.cliente.nom_pers_contact}"/>
+                </div>
+                <div class="mb-3">
+                    <label for="fech_nacimiento" class="form-label">Fecha de Nacimiento</label>
+                    <h:inputText class="form-control" id="fech_nacimiento" value="#{clienteBean.cliente.fech_nacimiento}"/>
+                </div>
+                <div class="mb-3">
+                    <label for="fech_modificacion" class="form-label">Fecha de Modificación</label>
+                    <h:inputText class="form-control" id="fech_modificacion" value="#{clienteBean.cliente.fech_modificacion}"/>
+                </div>
+                <div class="mb-3">
+                    <label for="fech_creacion" class="form-label">Fecha de Creación</label>
+                    <h:inputText class="form-control" id="fech_creacion" value="#{clienteBean.cliente.fech_creacion}"/>
+                </div>
+                <div class="mb-3">
+                    <label for="cedula_vendedor" class="form-label">Cédula Vendedor</label>
+                    <h:inputText class="form-control" id="cedula_vendedor" value="#{clienteBean.cliente.cedula_vendedor}"/>
+                </div>
+
+                <div class="mb-3">
+                    <h:commandButton value="Guardar" action="#{clienteBean.crear()}"/>
+                    <h:commandButton value="Retroceder" action="#{clienteBean.devolverEditar()}"/>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

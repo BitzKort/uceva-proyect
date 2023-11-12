@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Listado de planesTuristicos</title>
+</h:head>
+
+<h:body>
+    <h:form id="formdatos">
+        <p:messages id="mensajes" showDetails="false" autoUpdate="true" />
+        <p:dataTable id="tbldatos" value="#{planTuristicoBean.listar()}" var="planTuristico">
+            <p:column headerText="ID PLANTURISTICO">
+                <h:outputText value="#{planTuristico.id_plan_turistico}"/>
+            </p:column>
+
+            <p:column headerText="TITULO">
+                <h:outputText value="#{planTuristico.titulo}"/>
+            </p:column>
+
+            <p:column headerText="CANTIDAD DE DIAS">
+                <h:outputText value="#{planTuristico.cant_dias}"/>
+            </p:column>
+            <p:column headerText="DESCRIPCION">
+                <h:outputText value="#{planTuristico.descripcion}"/>
+            </p:column>
+            <p:column headerText="FECHA DE CREACION">
+                <h:outputText value="#{planTuristico.fech_creacion}"/>
+            </p:column>
+
+            <p:column headerText="FECHA DE MODIFICACION">
+                <h:outputText value="#{planTuristico.fech_modificacion}"/>
+            </p:column>
+            <p:column headerText="ESTADO">
+                <h:outputText value="#{planTuristico.estado}"/>
+            </p:column>
+            <p:column headerText="ALIMENTACION">
+                <h:outputText value="#{planTuristico.alimentacion}"/>
+            </p:column>
+
+            <p:column headerText="#{msgs['coreAction']}">
+                <p:commandButton styleClass="iu-button-danger"
+                                 value="Borrar"
+                                 action="#{planTuristicoBean.eliminar(planTuristico.id_plan_turistico)}"
+                                 update="formdatos:tbldatos">
+                    <p:confirm header="Eliminar" message="Seguro que desea eliminar?"/>
+                </p:commandButton>
+            </p:column>
+
+            <p:column headerText="#{msgs['coreAction']}">
+                <p:commandButton styleClass="iu-button-danger"
+                                 value="Editar"
+                                 action="#{planTuristicoBean.irEditar(planTuristico.id_plan_turistico)}"
+                                 update="formdatos:tbldatos">
+                </p:commandButton>
+            </p:column>
+
+        </p:dataTable>
+        <p:confirmDialog global="true" showEffect="fade" hideEffect="fade" responsive="true" width="350">
+            <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no ui-button-flat"/>
+            <p:commandButton value="Si" type="button" styleClass="ui-confirmdialog-yes"/>
+        </p:confirmDialog>
+
+        <h:commandButton styleClass="btn-primary" action="#{planTuristicoBean.irCrear()}" value="Crear PlanesTuristicos"/>
+
+        <h:commandButton value="Retroceder" action="#{planTuristicoBean.devolverse()}"/>
+
+        <h:commandButton value="Ir A los Puntos De Visita" action="#{planTuristicoBean.irActividad()}"/>
+    </h:form>
+</h:body>
+</html>

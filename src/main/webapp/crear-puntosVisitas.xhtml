@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Crear PuntoVisita</title>
+</h:head>
+
+<h:body>
+    <ui:composition template="./WEB-INF/plantillas/modificarcrear.xhtml">
+        <ui:define name="content">
+            <h2>Crear PuntoVisita</h2>
+            <p:messages id="mensajes" showDetails="false" autoUpdate="true" />
+            <h:form id="formdatos">
+                <div class="mb-3">
+                    <label for="idActividad" class="form-label">ID ACTIVIDAD</label>
+                    <h:inputText class="form-control" id="idActividad" value="#{puntoVisitaBean.puntoVisita.id_actividad}"/>
+                </div>
+                <div class="mb-3">
+                    <label for="nomActividad" class="form-label">NOMBRE DE LA ACTIVIDAD</label>
+                    <h:inputText class="form-control" id="nomActividad" value="#{puntoVisitaBean.puntoVisita.nom_actividad}"/>
+                </div>
+                <div class="mb-3">
+                    <label for="descripcion" class="form-label">DESCRIPCIÓN</label>
+                    <h:inputText class="form-control" id="descripcion" value="#{puntoVisitaBean.puntoVisita.descripcion}"/>
+                </div>
+                <div class="mb-3">
+                    <label for="estado" class="form-label">ESTADO</label>
+                    <h:inputText class="form-control" id="estado" value="#{puntoVisitaBean.puntoVisita.estado}"/>
+                </div>
+                <div class="mb-3">
+                    <label for="fechModificacion" class="form-label">FECHA DE MODIFICACIÓN</label>
+                    <h:inputText class="form-control" id="fechModificacion" value="#{puntoVisitaBean.puntoVisita.fech_modificacion}"/>
+                </div>
+                <div class="mb-3">
+                    <label for="fechCreacion" class="form-label">FECHA DE CREACIÓN</label>
+                    <h:inputText class="form-control" id="fechCreacion" value="#{puntoVisitaBean.puntoVisita.fech_creacion}"/>
+                </div>
+                <div class="mb-3">
+                    <label for="id_departamento" class="form-label">id departamento</label>
+                    <h:inputText class="form-control" id="id_departamento" value="#{puntoVisitaBean.puntoVisita.id_departamento}"/>
+                </div>
+                <div class="mb-3">
+                    <label for="id_ciudad" class="form-label">id ciudad</label>
+                    <h:inputText class="form-control" id="id_ciudad" value="#{puntoVisitaBean.puntoVisita.id_ciudad}"/>
+                </div>
+                <div class="mb-3">
+                    <h:commandButton value="Guardar" action="#{puntoVisitaBean.crear()}"/>
+                    <h:commandButton value="Retroceder" action="#{puntoVisitaBean.devolverEditar()}"/>
+                </div>
+
+                <h:commandButton value="Retroceder" action="#{puntoVisitaBean.devolverse()}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

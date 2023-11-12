@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Listado de activos</title>
+</h:head>
+
+<h:body>
+            <h:form id="formdatos">
+                <p:messages id="mensajes" showDetails="false" autoUpdate="true" />
+                <p:dataTable id="tbldatos" value="#{activoBean.listar()}" var="activo">
+                    <p:column headerText="ID">
+                        <h:outputText value="#{activo.idPlant}"/>
+                    </p:column>
+                    <p:column headerText="TEMPORADA DE AÑO">
+                        <h:outputText value="#{activo.temporada_año}"/>
+                    </p:column>
+                    <p:column headerText="TARIFA VIGENTE">
+                        <h:outputText value="#{activo.tarifa_vigente}"/>
+                    </p:column>
+                    <p:column headerText="#{msgs['coreAction']}">
+                        <p:commandButton styleClass="iu-button-danger"
+                                         value="Borrar"
+                                         action="#{activoBean.eliminar(activo.idPlant)}"
+                                         update="formdatos:tbldatos">
+                            <p:confirm header="Eliminar" message="Seguro que desea eliminar?"/>
+                        </p:commandButton>
+                    </p:column>
+
+                    <p:column headerText="#{msgs['coreAction']}">
+                        <p:commandButton styleClass="iu-button-danger"
+                                         value="Editar"
+                                         action="#{activoBean.irEditar(activo.idPlant)}"
+                                         update="formdatos:tbldatos">
+                        </p:commandButton>
+                    </p:column>
+
+                </p:dataTable>
+                <p:confirmDialog global="true" showEffect="fade" hideEffect="fade" responsive="true" width="350">
+                    <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no ui-button-flat"/>
+                    <p:commandButton value="Si" type="button" styleClass="ui-confirmdialog-yes"/>
+                </p:confirmDialog>
+
+                <h:commandButton styleClass="btn-primary" action="#{activoBean.irCrear()}" value="Crear Activo"/>
+                <h:commandButton value="Retroceder" action="#{activoBean.devolverse()}"/>
+            </h:form>
+</h:body>
+</html>

@@ -1,0 +1,703 @@
+/* Colores */
+:root {
+    --primary-color: #253680; /* Azul oscuro */
+    --secondary-color: #E74C3C; /* Rojo */
+    --accent-color: #3498DB; /* Azul claro */
+    --background-color: #ECF0F1; /* Gris claro */
+}
+
+* {
+
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+    text-decoration: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::selection {
+    background: #140683;
+    color: #fff;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--primary-color);
+}
+
+.heading {
+    font-size: 4rem;
+    color: #fcfcfd;
+    text-align: center;
+    padding: 6rem 1rem 0 0;
+    letter-spacing: .2rem;
+    font-weight: 600;
+}
+
+.title {
+    padding: 0 1rem;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 400;
+    color: #fff;
+}
+
+header {
+    width: 100%;
+    background: var(--primary-color);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    z-index: 1000;
+    transition: .2s;
+}
+header .navbar ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+}
+
+header .navbar ul li {
+    margin: 0 1rem;
+}
+
+header .navbar ul li a {
+    font-size: 2rem;
+    color: #fff;
+    transition: .2s;
+}
+
+header .navbar ul li .active,
+header .navbar ul li a:hover {
+    color: var(--accent-color);
+}
+
+
+header .logo {
+    font-size: 2.5rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+header .fa-bars {
+    font-size: 3rem;
+    color: #253680;
+    cursor: pointer;
+    display: none;
+    transition: .2s;
+}
+
+
+/*EN ESTA PARTE SE MODIFICA LO QUE ES EL INICIO, SE PONE LA IMAGEN DE PORTADA COMO TAL Y SE DEGRADAN LOS COLORES*/
+.inicio {
+    min-height: 50vh;
+    background: linear-gradient(rgba(255, 241, 45, 0), rgba(255, 251, 0, 0)), url(../img/PlanTuristico.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.inicio .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding-top: 25rem;
+    text-align: center;
+}
+
+
+/*EN ESTA PARTE EL TITULO PRINCIPAL*/
+.inicio .content h1 {
+    font-size: 5rem;
+    color: #fff;
+    padding: 0 1rem;
+    text-shadow: 0 .3rem .5rem rgba(10, 10, 10, 0.65); /*PA DAR SOMBREADO ROJO*/
+    text-transform: uppercase;
+}
+/*SE MODIFICA EL SUBTITULO*/
+.inicio .content p {
+    font-size: 2rem;
+    color: rgb(0, 0, 0);
+    padding: 1rem 25rem;   
+}
+
+/*SE MODIFICA EL BOTON DE DESCUENTOS*/
+.inicio .content button {
+    height: 5rem;
+    width: 20rem;
+    border-radius: 1rem;
+    background: #f9580e;
+    color: rgb(0, 0, 0);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: .2s;
+    box-shadow: 0 .3rem 1rem rgba(0, 0, 0, .3);
+    margin: 4rem 0;
+    border-color: #f9580e;
+}
+
+/*SE MODIFICA EL BOTON DE CRUDS*/
+.inicio .content button {
+    height: 5rem;
+    width: 20rem;
+    border-radius: 1rem;
+    background: #253680;
+    color: rgb(238, 233, 233);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: .2s;
+    box-shadow: 0 .3rem 1rem rgba(248, 248, 248, 0.3);
+    margin: 4rem 0;
+    border-color: #253680;
+}
+
+/*BORDE DE DESCUENTOS*/
+.inicio .content button:hover {
+    background: none;   /*PA DESACTIVAR EL COLOR AL PASAR EL CURSOR EN EL BOTON*/
+    border: .2rem solid #140683;
+}
+
+
+/*PARTE DE DESCUENTOS*/
+
+/*CENTRAR EL TEXTO*/
+.Descuento {
+    text-align: center;
+    margin: 100px 0;
+}
+
+/*CENTRAR LOS CUADROS Y ACOMODARLOS*/
+.Descuento .box-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+
+/*FONDO DE LOS CUADROS*/
+.Descuento .box-container .box {
+    height: 25rem;
+    width: 25rem;
+    background: var(--primary-color);
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: 0 .3rem 5rem rgba(4, 75, 255, 0.5);
+    margin: 2rem;
+    cursor: pointer;
+}
+
+.Descuento .box-container .box i{
+    height: 6rem;
+    width: 6rem;
+    line-height: 6rem;
+    text-align: center;
+    border-radius: 50%;
+    color: var(--accent-color);
+    background: #ffc246 ;
+    font-size: 3rem;
+    margin: 2rem 0;
+    transition: .2s;
+}
+
+
+/*TITULOS DENTRO DE LOS CUADROS*/
+.Descuento .box-container .box h3 {
+    font-size: 2rem;
+    color: #0ef9de;
+    transition: .2s;
+}
+
+
+/*LO DE ADENTRO DE LOS CUADROS*/
+.Descuento .box-container .box p {
+    font-size: 1.3rem;
+    padding: .7rem 2rem;
+    color: #fff;
+}
+
+.Descuento .box-container .box:hover i {
+    background: #efeef3;
+}
+
+.Descuento .box-container .box:hover h3 {
+    color: #ffc246;
+}
+
+
+/*MODIFICAR EL BOTON ESTAN LOS COLORES DE EL FORMA...*/
+.Descuento button {
+    height: 5rem;
+    width: 20rem;
+    border-radius: 1rem;
+    background: #253680;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: .2s;
+    box-shadow: 0 .3rem 1rem rgba(248, 248, 247, 0.5);
+    margin-top: 50px;
+}
+
+/*BORDE DEL BOTON*/
+.Descuento button:hover {
+    background: none;
+    border: .2rem solid #e9e9e9;
+}
+
+
+
+/*COMIENZA FRASE LINDA*/
+/*FONDO DE FRASE LINDA*/
+.frase {
+    background: #ffffff;
+}
+.letra{
+    font-size: 4rem;
+    color: #253680;
+    text-align: center;
+    padding: 6rem 1rem 0 0;
+    letter-spacing: .2rem;
+    font-weight: 600;
+}
+.letra1{
+    font-size: 2rem;
+    color: #253680;
+    text-align: center;
+    padding: 6rem 1rem 0 0;
+    letter-spacing: .1rem;
+    font-weight: 200;
+}
+
+/*MARGEN DE BOTON*/
+.frase .title {
+    margin-bottom: 3rem;
+}
+
+/*CENTRA TODO*/
+.frase .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/*TAMAÑO DE LA IMAGEN*/
+.frase .row .image img {
+    height: 50vh;
+    width: 50vw;
+    margin-left: 100px;
+}
+
+/*ACOMODA LA IMAGEN*/
+.frase .row .content {
+    padding-left: 5rem;
+    margin: 5rem 0;
+}
+
+/*MODIFICA EL SUBTITULO*/
+.frase .row .content h3 {
+    font-size: 3rem;
+    color: #253680;
+}
+
+.frase .row .content p {
+    font-size: 1.6rem;
+    color: #253680;
+    padding: 1rem 0;
+}
+
+
+/*MODIFICA COLOR DEL BOTON TAMAÑO ETC...*/
+.frase .row .content button {
+    height: 5rem;
+    width: 17rem;
+    background: #253680;
+    color: rgb(253, 247, 247);
+    border-radius: 1rem;
+    box-shadow: 0 .3rem 1rem rgba(255, 0, 0, 0.3);
+    cursor: pointer;
+    font-size: 2rem;
+    transition: .2s;
+    margin-top: 2rem;
+}
+
+/*COLOR AL PASAR EL CURSOR*/
+.frase .row .content button:hover {
+    background: none;
+    border: .2rem solid #253680;
+}
+
+
+/*PLANES TURISTICOS*/
+/*CENTRAR Y ORGANIZAR LOS MARCOS DE PLANES TURISTICOS*/
+.PlanTuris .box-container {
+    width: 85%;
+    display: flex;  /*AYUDA A PNERLOS DE 2 EN 2*/
+    justify-content: center;   /*AYUDA A CENTRARLOS*/
+    margin:  0 auto;
+    padding: 4rem 0;
+    flex-wrap: wrap;   /*especifica si los elementos "hijos" son obligados a permanecer en una misma línea o pueden fluir en varias líneas*/
+}
+
+
+/*COLOR DE MARCO POR DENTRO Y FUERA, ASI COMO EL TAMAÑO, EN PLANES TURISTICOS*/
+.PlanTuris .box-container .box {
+    background: #171717;
+    box-shadow: 0 .3rem 5rem rgba(0, 225, 255, 0.3);
+    height: 25rem;
+    width: 25rem;
+    margin: 3.5rem 2rem;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+
+/*ESTO ES PARA CENTRAR LA LETRA ADEMAS ESCOGER EL TAMAÑO DE TEXTO Y COLOR DE ESTRELLA*/
+.PlanTuris .box-container .box i {
+    height: 10rem;
+    width: 10rem;
+    line-height: 8rem;
+    text-align: center;
+    color: #fbff00;
+    background: none;
+    margin-top: 2rem;
+    font-size: 5rem;
+}
+
+
+/*COLOR DE LETRA DE TITULOS EN PLANES TURISTICOS*/
+.PlanTuris .box-container .box h3 {
+    font-size: 2rem;
+    color: #ffc246;
+}
+
+
+/*COLOR DE LETRA EN PLANES TURISTICOS*/
+.PlanTuris .box-container .box p {
+    font-size: 1.5rem;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+
+
+    /*CRUDS*/
+    /*CENTRAR Y ORGANIZAR LOS MARCOS DE LOS CRUDS*/
+.CRUDS .box-container {
+    width: 85%;
+    display: flex;  /*AYUDA A PNERLOS DE 2 EN 2*/
+    justify-content: center;   /*AYUDA A CENTRARLOS*/
+    margin:  0 auto;
+    padding: 4rem 0;
+    flex-wrap: wrap;   /*especifica si los elementos "hijos" son obligados a permanecer en una misma línea o pueden fluir en varias líneas*/
+}
+
+
+/*COLOR DE MARCO POR DENTRO Y FUERA, ASI COMO EL TAMAÑO, EN CRUDS*/
+.CRUDS .box-container .box {
+    background: #171717;
+    box-shadow: 0 .3rem 5rem rgba(0, 225, 255, 0.3);
+    height: 25rem;
+    width: 25rem;
+    margin: 3.5rem 2rem;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+
+/*ESTO ES PARA CENTRAR LA LETRA ADEMAS ESCOGER EL TAMAÑO DE TEXTO Y COLOR DE ESTRELLA*/
+.CRUDS .box-container .box i {
+    height: 10rem;
+    width: 10rem;
+    line-height: 8rem;
+    text-align: center;
+    color: #fbff00;
+    background: none;
+    margin-top: 2rem;
+    font-size: 5rem;
+}
+
+
+/*COLOR DE LETRA DE TITULOS EN LOS CRUDS*/
+.CRUDS .box-container .box h3 {
+    font-size: 2rem;
+    color: #ffc246;
+}
+
+
+/*COLOR DE LETRA EN CRUDS*/
+.CRUDS .box-container .box p {
+    font-size: 1.5rem;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+
+/*FONDO DE INTEGRANTES*/
+.Integrantes {
+    background: #171717;
+}
+
+
+/*FORMA DE LA PARTE DE INTEGRANTES, A LOS MARCOS*/
+.Integrantes .box-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 4rem;
+    flex-wrap: wrap;
+}
+
+
+/*COLOR DE FONDO DE NUESTROS NOMBRES, LO QUE ES EL MARCO Y DENTRO*/
+.Integrantes .box-container .box {
+    width: 28rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    box-shadow: 0 .3rem 5rem rgba(250, 0, 0, 0.3);
+    background: #0c0b0b;
+    margin: 4rem 2rem;
+}
+
+
+
+/*PARA DAR FORMA, COLOR, Y TAMAÑO A NUESTRAS FOTOS*/
+.Integrantes .box-container .box img {
+    height: 8.5rem;
+    width: 8.5rem;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: -4rem;
+    border: .6rem solid #003cff;
+    border-left: .6rem solid #0300d1;
+    border-bottom: .6rem solid #0c0041;
+}
+
+
+/*COLOR DE NUESTROS NOMBRES*/
+.Integrantes .box-container .box h3 {
+    font-size: 2rem;
+    color: #00e1ff;
+    padding: 0 .5rem;
+}
+
+
+/*COLOR DE LO DE ADENTRO EN NUESTROS NOMBRES*/
+.Integrantes .box-container .box p {
+    font-size: 1.4rem;
+    color: #fff;
+    padding: 1.3rem .1rem;
+}
+
+/*COLOR DE LAS ESTRELLAS EN NUESTROS NOMBRES*/
+.Integrantes .box-container .box .stars i {
+    font-size: 1.6rem;
+    color: #00eeff;
+    padding: 1.3rem .1rem;
+}
+
+
+/*COLOR DE FONDO DE INSCRIBETE*/
+.Inscribirse {
+    background: #171717;
+}
+
+
+/*MODIFICA Y CENTRA LA PARTE DE INSCRIBIRSE*/
+.Inscribirse .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.Inscribirse .row .form-container {
+    width: 50%;
+    padding-right: 6rem;
+}
+
+
+/*EL ESTILO EN EL INPUT COMO EN EL TEXT AREA ALTURA, ANCHO FONDO*/
+.Inscribirse .row .form-container input, textarea {
+    height: 4rem;
+    width: 100%;
+    background: #fff;
+    border-radius: 5rem;   /*un poco redondeado*/
+    padding: 0 1rem;
+    margin: 1rem 0;   /*izquierda  y derecha*/
+    color: #253680;
+    font-size: 1.7rem;
+    transition: .2s linear;  /*animacion con efecto lineal*/
+}
+
+
+/*ESTO ES PARA LA LETRA DEL BOTON*/
+.Inscribirse .row .form-container input:focus, textarea:focus {
+    border: .4rem solid #253680;
+}
+
+/*MODIFICA TODOS LOS INPUTS*/
+.Inscribirse .row .form-container textarea {
+    height: 20rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    resize: none;
+}
+
+
+/*ESTILO A NUESTRO INPUT SUBMIT*/
+.Inscribirse .row .form-container input[type="submit"] {
+    height: 5rem;
+    width: 17rem;
+    background: #253680;
+    color: #fff;
+    cursor: pointer;
+    font-size: 2rem;
+    transition: .2s;
+}
+
+
+/*ESTO ES PARA MAS ESTILO CON HOVER*/
+.Inscribirse .row .form-container input[type="submit"]:hover {
+    background: none;
+    color: #253680;
+    border: .2rem solid #253680;
+}
+
+
+/*FOOTER ESTO AFECTA LA PARTE INFERIOR OSEA LOS ICONOS DE INSTAGRAMA*/
+.footer {
+    text-align: center;
+}
+
+.footer .icons {
+    padding: 3rem 0;
+}
+
+
+/*MODIFICA LOS ICONOS DE INSTAGRAM*/
+.footer .icons a {
+    height: 4.5rem;    /*ALTURA DE LA APLICACION*/
+    width: 4.5rem;     /*ANCHO DE LA APLICACION*/
+    line-height: 4.2rem;    /*establece la altura de una casilla remarcada, osea centra la aplicacion*/
+    text-align: center;     /*para centrar*/
+    border-radius: 50%;       /*para colocar los instagram redondos*/
+    color: #ffffff;
+    border: .2rem solid #580505;
+    font-size: 2rem;
+    margin: 0 .1rem;
+    transition: .2s linear;         /*hace el efecto */
+
+}
+
+/*EL HOVER CUANDO PASAMOS EL RATON POR ENCIMA*/
+.footer .icons a:hover {
+    color: #fff;
+    background: #000f96;         /*Para cuando pasa el cursor encima de instagram*/
+    border-color: #87f706;
+}
+
+/*MEDIA QUERY SON CARACTERISTICAS*/
+@media (max-width: 768px) {
+    
+    /*TODO EL HTML*/
+    html {
+        font-size: 55%;
+    }
+
+
+    header .fa-bars {
+        display: block;
+    }
+
+
+    /*LA BARRA*/
+    header .navbar {
+        position: fixed;  
+        top: -100rem; /*DESAPARECE EL MENU*/
+        left: 0; 
+        width: 100%;
+        background: #171717;
+        border-radius: 1rem;
+        opacity: 0;
+        transition: .2s linear;
+    }
+
+
+    /*LO QUEREMOS AFECTAR COMO FLEX*/
+    header .navbar ul {
+        flex-flow: column;
+        padding: 2rem 0;
+    }
+
+
+    header .navbar ul li {
+        margin: 1rem 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    header .navbar ul li a {
+        font-size: 3rem;
+        display: block;
+    }
+
+    /*ESTA CLASE ES PARA J QUERY*/
+    header .nav-toggle {
+        top:5.5rem;
+        opacity: 1;
+    }
+
+    /*ZONA DE MODIFICACION PARA INICIO, FRASE, PLANES, INSCRIBIR */
+    .inicio .content p {
+        padding: 1.5rem 2rem;
+    }
+
+    .frase .row {
+        flex-direction: column-reverse;
+    }
+
+    .frase .row .image img {
+        height: 30vh;
+        width: 90vw;
+    }
+
+    .frase .row .content {
+        padding: 0 2.5rem;
+    }
+
+    .PlanTuris .box-container {
+        width: 100%;
+    }
+
+    .Inscribirse .row {
+        flex-flow: column;
+    }
+
+    .Inscribirse .row .form-container {
+        width: 90%;
+        padding: 0;
+    }
+
+
+
+}
+
+
+
+

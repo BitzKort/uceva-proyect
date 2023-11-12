@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Crear Activo</title>
+</h:head>
+
+<h:body>
+    <ui:composition template="./WEB-INF/plantillas/modificarcrear.xhtml">
+    <ui:define name="content">
+            <h2>Crear Activo</h2>
+            <p:messages id="mensajes" showDetails="false" autoUpdate="true" />
+            <h:form id="formdatos">
+                <div class="mb-3">
+                    <label for="id" class="form-label">ID</label>
+                    <h:inputText class="form-control" id="id" value="#{activoBean.activo.idPlant}"/>
+                </div>
+                <div class="mb-3">
+                    <label for="tempa" class="form-label">TEMPORADA DE AÑO</label>
+                    <h:inputText class="form-control" id="tempa" value="#{activoBean.activo.temporada_año}"/>
+                </div>
+                <div class="mb-3">
+                    <label for="tarf" class="form-label">TARIFA VIGENTE</label>
+                    <h:inputText class="form-control" id="tarf" value="#{activoBean.activo.tarifa_vigente}"/>
+
+                </div>
+
+                <div class="mb-3">
+                    <h:commandButton value="Guardar" action="#{activoBean.crear()}"/>
+                    <h:commandButton value="Retroceder" action="#{activoBean.devolverEditar()}"/>
+
+                </div>
+
+                <!--BOTON PA DEVOLVERSE-->
+
+            </h:form>
+    </ui:define>
+    </ui:composition>
+</h:body>
+</html>

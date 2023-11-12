@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Listado de Vendedores</title>
+</h:head>
+
+<h:body>
+    <h:form id="formdatos">
+        <p:messages id="mensajes" showDetails="false" autoUpdate="true" />
+        <p:dataTable id="tbldatos" value="#{vendedorBean.listar()}" var="vendedor">
+            <p:column headerText="ID VENDEDOR">
+                <h:outputText value="#{vendedor.cedula_vendedor}"/>
+            </p:column>
+            <p:column headerText="NOMBRE VENDEDOR">
+                <h:outputText value="#{vendedor.nombre_vendedor}"/>
+            </p:column>
+            <p:column headerText="CORREO ELECTRÓNICO">
+                <h:outputText value="#{vendedor.correo_electronico}"/>
+            </p:column>
+            <p:column headerText="USERNAME">
+                <h:outputText value="#{vendedor.username}"/>
+            </p:column>
+            <p:column headerText="FECHA DE NACIMIENTO">
+                <h:outputText value="#{vendedor.fech_nacimiento}"/>
+            </p:column>
+            <p:column headerText="#{msgs['coreAction']}">
+                <p:commandButton styleClass="iu-button-danger"
+                                 value="Borrar"
+                                 action="#{vendedorBean.eliminar(vendedor.cedula_vendedor)}"
+                                 update="formdatos:tbldatos">
+                    <p:confirm header="Eliminar" message="Seguro que desea eliminar?"/>
+                </p:commandButton>
+            </p:column>
+            <p:column headerText="#{msgs['coreAction']}">
+                <p:commandButton styleClass="iu-button-danger"
+                                 value="Editar"
+                                 action="#{vendedorBean.irEditar(vendedor.cedula_vendedor)}"
+                                 update="formdatos:tbldatos">
+                </p:commandButton>
+            </p:column>
+        </p:dataTable>
+        <p:confirmDialog global="true" showEffect="fade" hideEffect="fade" responsive="true" width="350">
+            <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no ui-button-flat"/>
+            <p:commandButton value="Si" type="button" styleClass="ui-confirmdialog-yes"/>
+        </p:confirmDialog>
+        <h:commandButton styleClass="btn-primary" action="#{vendedorBean.irCrear()}" value="Crear Vendedores"/>
+        <h:commandButton value="Retroceder" action="#{vendedorBean.devolverse()}"/>
+    </h:form>
+</h:body>
+</html>

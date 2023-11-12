@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Listado de actividades</title>
+</h:head>
+
+<h:body>
+            <h:form id="formdatos">
+                <p:messages id="mensajes" showDetails="false" autoUpdate="true" />
+                <p:dataTable id="tbldatos" value="#{actividadBean.listar()}" var="actividad">
+                    <p:column headerText="ID PLAN TURISTICO">
+                        <h:outputText value="#{actividad.id}"/>
+                    </p:column>
+                    <p:column headerText="Nombre">
+                        <h:outputText value="#{actividad.plan}"/>
+                    </p:column>
+                    <p:column headerText="Nombre Lugar">
+                        <h:outputText value="#{actividad.nombre_lugar}"/>
+                    </p:column>
+                    <p:column headerText="#{msgs['coreAction']}">
+                        <p:commandButton styleClass="iu-button-danger"
+                                         value="Borrar"
+                                         action="#{actividadBean.eliminar(actividad.id)}"
+                                         update="formdatos:tbldatos">
+                            <p:confirm header="Eliminar" message="Seguro que desea eliminar?"/>
+                        </p:commandButton>
+                    </p:column>
+
+                    <p:column headerText="#{msgs['coreAction']}">
+                        <p:commandButton styleClass="iu-button-danger"
+                                         value="Editar"
+                                         action="#{actividadBean.irEditar(actividad.id)}"
+                                         update="formdatos:tbldatos">
+                        </p:commandButton>
+                    </p:column>
+
+                </p:dataTable>
+                <p:confirmDialog global="true" showEffect="fade" hideEffect="fade" responsive="true" width="350">
+                    <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no ui-button-flat"/>
+                    <p:commandButton value="Si" type="button" styleClass="ui-confirmdialog-yes"/>
+                </p:confirmDialog>
+
+                <h:commandButton styleClass="btn-primary" action="#{actividadBean.irCrear()}" value="Crear Actividad"/>
+
+                <!--BOTON PA DEVOLVERSE-->
+
+                    <h:commandButton value="Retroceder" action="#{actividadBean.devolverse()}"/>
+
+            </h:form>
+</h:body>
+</html>
