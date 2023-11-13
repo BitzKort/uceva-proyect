@@ -1,5 +1,7 @@
 package co.uceva.edu.base.models;
 
+import java.sql.Date;
+
 public class Cliente {
 
     private int cedula_cliente;
@@ -8,15 +10,15 @@ public class Cliente {
     private long tel_pers_contact;
     private String quien_creo;
     private String nom_pers_contact;
-    private String fech_nacimiento;
-    private String fech_modificacion;
-    private String fech_creacion;
+    private Date fech_nacimiento;
+    private Date fech_modificacion;
+    private Date fech_creacion;
     private int cedula_vendedor;
 
     // Constructor
     public Cliente(int cedula_cliente, String nombre_cliente, String correo_electronico,
                    long tel_pers_contact, String quien_creo, String nom_pers_contact,
-                   String fech_nacimiento, String fech_modificacion, String fech_creacion,
+                   Date fech_nacimiento, Date fech_modificacion, Date fech_creacion,
                    int cedula_vendedor) {
         this.cedula_cliente = cedula_cliente;
         this.nombre_cliente = nombre_cliente;
@@ -83,27 +85,27 @@ public class Cliente {
         this.nom_pers_contact = nom_pers_contact;
     }
 
-    public String getFech_nacimiento() {
+    public Date getFech_nacimiento() {
         return fech_nacimiento;
     }
 
-    public void setFech_nacimiento(String fech_nacimiento) {
+    public void setFech_nacimiento(Date fech_nacimiento) {
         this.fech_nacimiento = fech_nacimiento;
     }
 
-    public String getFech_modificacion() {
+    public Date getFech_modificacion() {
         return fech_modificacion;
     }
 
-    public void setFech_modificacion(String fech_modificacion) {
+    public void setFech_modificacion(Date fech_modificacion) {
         this.fech_modificacion = fech_modificacion;
     }
 
-    public String getFech_creacion() {
+    public Date getFech_creacion() {
         return fech_creacion;
     }
 
-    public void setFech_creacion(String fech_creacion) {
+    public void setFech_creacion(Date fech_creacion) {
         this.fech_creacion = fech_creacion;
     }
 

@@ -23,9 +23,9 @@ public class ClienteRepository {
             pst.setLong(4, cliente.getTel_pers_contact());
             pst.setString(5, cliente.getQuien_creo());
             pst.setString(6, cliente.getNom_pers_contact());
-            pst.setString(7, cliente.getFech_nacimiento());
-            pst.setString(8, cliente.getFech_modificacion());
-            pst.setString(9, cliente.getFech_creacion());
+            pst.setDate(7, cliente.getFech_nacimiento());
+            pst.setDate(8, cliente.getFech_modificacion());
+            pst.setDate(9, cliente.getFech_creacion());
             pst.setInt(10, cliente.getCedula_vendedor());
             pst.executeUpdate();
 
@@ -61,9 +61,9 @@ public class ClienteRepository {
                 cliente.setTel_pers_contact(rs.getLong("tel_pers_contact"));
                 cliente.setQuien_creo(rs.getString("quien_creo"));
                 cliente.setNom_pers_contact(rs.getString("nom_pers_contact"));
-                cliente.setFech_nacimiento(rs.getString("fech_nacimiento"));
-                cliente.setFech_modificacion(rs.getString("fech_modificacion"));
-                cliente.setFech_creacion(rs.getString("fech_creacion"));
+                cliente.setFech_nacimiento(Date.valueOf(rs.getString("fech_nacimiento")));
+                cliente.setFech_modificacion(Date.valueOf(rs.getString("fech_modificacion")));
+                cliente.setFech_creacion(Date.valueOf(rs.getString("fech_creacion")));
                 cliente.setCedula_vendedor(rs.getInt("cedula_vendedor"));
 
                 listadoCliente.add(cliente);
@@ -102,9 +102,9 @@ public class ClienteRepository {
                 cliente.setTel_pers_contact(rs.getLong("tel_pers_contact"));
                 cliente.setQuien_creo(rs.getString("quien_creo"));
                 cliente.setNom_pers_contact(rs.getString("nom_pers_contact"));
-                cliente.setFech_nacimiento(rs.getString("fech_nacimiento"));
-                cliente.setFech_modificacion(rs.getString("fech_modificacion"));
-                cliente.setFech_creacion(rs.getString("fech_creacion"));
+                cliente.setFech_nacimiento(Date.valueOf(rs.getString("fech_nacimiento")));
+                cliente.setFech_modificacion(Date.valueOf(rs.getString("fech_modificacion")));
+                cliente.setFech_creacion(Date.valueOf(rs.getString("fech_creacion")));
                 cliente.setCedula_vendedor(rs.getInt("cedula_vendedor"));
 
                 listadoCliente.add(cliente);
@@ -159,9 +159,9 @@ public class ClienteRepository {
             pst.setLong(4, cliente.getTel_pers_contact());
             pst.setString(5, cliente.getQuien_creo());
             pst.setString(6, cliente.getNom_pers_contact());
-            pst.setString(7, cliente.getFech_nacimiento());
-            pst.setString(8, cliente.getFech_modificacion());
-            pst.setString(9, cliente.getFech_creacion());
+            pst.setDate(7, cliente.getFech_nacimiento());
+            pst.setDate(8, cliente.getFech_modificacion());
+            pst.setDate(9, cliente.getFech_creacion());
             pst.setInt(10, cliente.getCedula_vendedor());
             pst.setInt(11, cliente.getCedula_cliente());
             pst.executeUpdate();
